@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: Juice Shop API
+  version: "1.0"
+servers:
+  - url: http://juiceshop:3000
+paths:
+  /rest/products/search:
+    get:
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema: { type: string }
+      responses:
+        '200': { description: ok }
+  /api/Users:
+    get:
+      responses: { '200': { description: ok } }
+  /api/Products:
+    get:
+      responses: { '200': { description: ok } }
+  /api/Feedbacks:
+    get:
+      responses: { '200': { description: ok } }
+  /rest/user/login:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email: { type: string }
+                password: { type: string }
+      responses:
+        '200': { description: ok }
